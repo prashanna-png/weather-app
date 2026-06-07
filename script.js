@@ -12,7 +12,10 @@ searchBtn.addEventListener('click', function () {
 });
 
 function getWeather(city) {
+<<<<<<< HEAD
   const apiKey = config.apiKey;
+=======
+>>>>>>> 460be136bbbb87ee15338a69939a3f4de1c67822
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   cityName.textContent = 'Loading...';
