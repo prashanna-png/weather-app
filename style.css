@@ -7,99 +7,218 @@
 body {
   min-height: 100vh;
   display: flex;
+  align-items: center;
   justify-content: center;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Outfit', sans-serif;
+  transition: background 0.6s ease;
+  padding: 20px;
 }
 
 .container {
   width: 100%;
-  max-width: 600px;
-  padding: 20px;
+  max-width: 420px;
 }
 
+/* Header */
 .header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-.quote {
-  text-align: center;
-  margin-bottom: 60px;
-  color: rgba(93, 214, 255, 0.5);
+.logo-icon {
+  font-size: 28px;
 }
 
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.6s ease;
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.6;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* Search box */
 .search-box {
   display: flex;
   gap: 10px;
-  margin-bottom: 24px;
-  height: 40px;
+  margin-bottom: 20px;
 }
 
-.search-box input {
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 15px;
-  outline: none;
-  width: 100%;
+.input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  padding: 0 14px;
+  transition: background 0.6s ease, border 0.6s ease;
 }
 
-.search-box input::placeholder {
-  color: #7a9aaa;
+.search-icon {
+  font-size: 14px;
+  opacity: 0.6;
 }
 
-.search-box input:focus {
-  border-color: #00b4d8;
-}
-
-.search-box button {
-  padding: 12px 20px;
-  background: #00b4d8;
-  color: #0f2027;
+#cityInput {
+  flex: 1;
   border: none;
-  border-radius: 8px;
-  font-size: 15px;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: 'Outfit', sans-serif;
+  padding: 12px 0;
+  transition: color 0.6s ease;
+}
+
+#cityInput::placeholder {
+  opacity: 0.5;
+}
+
+#searchBtn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
   font-weight: 600;
+  font-family: 'Outfit', sans-serif;
   cursor: pointer;
+  transition: background 0.6s ease, color 0.6s ease, transform 0.1s ease;
+  color: #fff;
 }
 
-.search-box button:hover {
-  background: #0096c7;
+#searchBtn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
 }
 
+#searchBtn:active {
+  transform: scale(0.97);
+}
 
 /* Weather card */
 .weather-card {
-  background: #203a43;
-  border: 1px solid #2c5364;
-  border-radius: 16px;
-  padding: 30px;
-  text-align: center;
-  height: 500px;
+  border-radius: 20px;
+  padding: 24px;
+  transition: background 0.6s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card-top {
+  margin-bottom: 16px;
+}
+
+.city-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.pin {
+  font-size: 14px;
 }
 
 #cityName {
-  font-size: 26px;
-  color: #00b4d8;
-  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  transition: color 0.6s ease;
 }
 
-#temperature {
-  font-size: 56px;
-  font-weight: 700;
+.country-tag {
+  font-size: 12px;
+  opacity: 0.6;
+  color: #fff;
+  font-weight: 400;
+}
+
+.date-time {
+  font-size: 12px;
+  padding-left: 20px;
+  transition: color 0.6s ease;
+}
+
+/* Main weather display */
+.card-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   margin-bottom: 8px;
 }
 
-#condition {
-  font-size: 18px;
-  color: #a0c4d8;
-  margin-bottom: 16px;
-  text-transform: capitalize;
+.weather-icon {
+  font-size: 60px;
+  line-height: 1;
 }
 
-#humidity {
+.temperature {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  transition: color 0.6s ease;
+}
+
+.condition {
+  text-align: center;
   font-size: 15px;
-  color: #7a9aaa;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  opacity: 0.85;
+  transition: color 0.6s ease;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.stat {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 18px;
+}
+
+.stat-val {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin: 4px 0 2px;
+  transition: color 0.6s ease;
+}
+
+.stat-label {
+  font-size: 11px;
+  opacity: 0.6;
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 11px;
+  opacity: 0.3;
+  color: #fff;
 }

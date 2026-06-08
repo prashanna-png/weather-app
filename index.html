@@ -4,47 +4,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
   <div class="container">
+
     <div class="header">
-      <img src="logo/clouds-and-sun.png" alt="logo" width="15%">
-      <h1>Weather App</h1>
+      <div class="logo">
+        <span class="logo-icon">🌤️</span>
+        <h1>Weather App</h1>
+      </div>
+      <p class="subtitle">real-time weather, anywhere</p>
     </div>
-    <p class="quote">real-time weather, anywhere</p>
 
     <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Search City.....">
+      <div class="input-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="cityInput" placeholder="Search city...">
+      </div>
       <button id="searchBtn">Search</button>
     </div>
 
     <div class="weather-card" id="weatherCard">
-      <h2 id="cityName"></h2>
-      <p id="temperature"></p>
-      <p id="condition"></p>
-      <p id="country"></p>
+
+      <div class="card-top">
+        <div class="city-row">
+          <span class="pin">📍</span>
+          <h2 id="cityName"></h2>
+          <span id="country" class="country-tag"></span>
+        </div>
+        <p id="dateTime" class="date-time"></p>
+      </div>
+
+      <div class="card-main">
+        <p id="weatherIcon" class="weather-icon"></p>
+        <p id="temperature" class="temperature"></p>
+      </div>
+
+      <p id="condition" class="condition"></p>
+
       <div class="stats">
         <div class="stat">
-          <p id="humidity"></p>
-          <span></span>
+          <span class="stat-icon">💧</span>
+          <p id="humidity" class="stat-val"></p>
+          <span class="stat-label">humidity</span>
         </div>
         <div class="stat">
-          <p id="wind"></p>
-          <span></span>
+          <span class="stat-icon">💨</span>
+          <p id="wind" class="stat-val"></p>
+          <span class="stat-label">wind</span>
         </div>
         <div class="stat">
-          <p id="visibility"></p>
-          <span></span>
+          <span class="stat-icon">👁️</span>
+          <p id="visibility" class="stat-val"></p>
+          <span class="stat-label">visibility</span>
         </div>
       </div>
+
     </div>
 
+    <p class="footer">Made by Prashanna · 2026</p>
+
   </div>
+
   <script src="config.js"></script>
-  <script src=" script.js"></script>
+  <script src="script.js"></script>
+
 </body>
 
 </html>
