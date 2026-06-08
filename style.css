@@ -6,11 +6,9 @@
 
 body {
   min-height: 100vh;
-  background: #0f2027;
   display: flex;
   justify-content: center;
   font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
 }
 
 .container {
@@ -25,13 +23,12 @@ body {
   justify-content: center;
   gap: 10px;
   margin-bottom: 8px;
-  color: #0096c7;
 }
 
 .quote {
   text-align: center;
   margin-bottom: 60px;
-  color: rgb(0, 150, 199, 0.5);
+  color: rgba(93, 214, 255, 0.5);
 }
 
 .search-box {
@@ -43,10 +40,7 @@ body {
 
 .search-box input {
   padding: 12px 16px;
-  border: 1px solid #2c5364;
   border-radius: 8px;
-  background: #203a43;
-  color: #ffffff;
   font-size: 15px;
   outline: none;
   width: 100%;
