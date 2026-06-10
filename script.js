@@ -64,6 +64,7 @@ function getWeather(city) {
       return response.json();
     })
     .then(function (data) {
+      console.log(data);
 
       if (data.cod === '404') {
         cityName.textContent = 'City not found!';
@@ -99,10 +100,6 @@ function getWeather(city) {
       humidity.style.color = t.humidity;
       wind.style.color = t.humidity;
       visibility.style.color = t.humidity;
-      searchBtn.style.background = t.btn;
-      document.querySelector('.input-wrap').style.background = t.input;
-      document.querySelector('.input-wrap').style.border = `1px solid ${t.inputBorder}`;
-      cityInput.style.color = t.inputColor;
       document.getElementById('dateTime').style.color = t.dateTime;
 
     });
