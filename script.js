@@ -14,14 +14,28 @@ window.onload = function () {
 };
 
 const weekDay = [
-  "Sunday", "Monday", "Tuesday", "Wednesday",
-  "Thursday", "Friday", "Saturday"
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
 ];
 
 const month = [
-  "January", "February", "March", "April",
-  "May", "June", "July", "August",
-  "September", "October", "November", "December"
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
 ];
 
 const d = new Date();
@@ -34,15 +48,33 @@ document.getElementById('month').innerText = monthName;
 document.getElementById('month-day').innerText = monthDay;
 
 const weatherThemes = {
-  'Clear': { card: 'linear-gradient(135deg, #1a1a2e, #e65c00)' },
-  'Clouds': { card: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)' },
-  'Rain': { card: 'linear-gradient(135deg, #0a0f1e, #0d3b6e, #1565c0)' },
-  'Drizzle': { card: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)' },
-  'Thunderstorm': { card: 'linear-gradient(135deg, #0d0221, #1a0533, #6a0dad)' },
-  'Snow': { card: 'linear-gradient(135deg, #0a1628, #1a3a5c, #a8d8ea)' },
-  'Mist': { card: 'linear-gradient(135deg, #1c1c1c, #2d2d2d, #4a4a4a)' },
-  'Fog': { card: 'linear-gradient(135deg, #1c1c1c, #2d2d2d, #4a4a4a)' },
-  'Haze': { card: 'linear-gradient(135deg, #1c1c1c, #2d2d2d, #4a4a4a)' },
+  'Clear': {
+    card: 'linear-gradient(135deg, #1a1a2e, #e65c00)'
+  },
+  'Clouds': {
+    card: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)'
+  },
+  'Rain': {
+    card: 'linear-gradient(135deg, #0a0f1e, #0d3b6e, #1565c0)'
+  },
+  'Drizzle': {
+    card: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)'
+  },
+  'Thunderstorm': {
+    card: 'linear-gradient(135deg, #0d0221, #1a0533, #6a0dad)'
+  },
+  'Snow': {
+    card: 'linear-gradient(135deg, #0a1628, #1a3a5c, #a8d8ea)'
+  },
+  'Mist': {
+    card: 'linear-gradient(135deg, #1c1c1c, #2d2d2d, #4a4a4a)'
+  },
+  'Fog': {
+    card: 'linear-gradient(135deg, #1c1c1c, #2d2d2d, #4a4a4a)'
+  },
+  'Haze': {
+    card: 'linear-gradient(135deg, #1c1c1c, #2d2d2d, #4a4a4a)'
+  }
 };
 
 function getWeatherIcon(weatherMain) {
@@ -97,6 +129,7 @@ function getWeather(city) {
 
       const t = weatherThemes[data.weather[0].main] || weatherThemes['Clouds'];
       document.getElementById('card').style.background = t.card;
+      console.log(`City: ${data.name}, Raw visibility: ${data.visibility} meters`);
     });
 }
 
