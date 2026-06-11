@@ -95,7 +95,13 @@ function getWeatherIcon(weatherMain) {
 function getWeather(city) {
   if (!city) return;
 
-  const apiKey = config.apiKey;
+  // Try to get from window.env (Vercel) or local config
+  const apiKey = window.ENV?.API_KEY || DEV_API_KEY;
+  if (!apiKey) {  // ← Add the ! (not operator)
+    console.error("API key not found!");
+    cityName.innerHTML = "Config error";
+    return;
+  }
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   cityName.innerText = "Loading...";
   fetch(url)
