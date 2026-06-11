@@ -47,7 +47,7 @@ A clean, minimal weather app that shows real-time weather data for any city in t
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/the-weather.git
+git clone git clone https://github.com/prashanna-png/weather-app.git
 cd the-weather
 ```
 
