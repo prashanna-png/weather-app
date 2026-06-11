@@ -89,9 +89,9 @@ body {
   gap: 6px;
 }
 
-.weather-icon {
+.weatherIcon {
   font-size: 80px;
-  margin: 20px 0;
+  margin-top: 20px;
 }
 
 .temp span {
@@ -99,7 +99,6 @@ body {
 }
 
 .temp {
-  margin-top: 50px;
   font-size: 40px;
 }
 
@@ -114,9 +113,9 @@ body {
   gap: 20px;
 }
 
-.humidity,
-.wind,
-.visibility {
+.humidity-box,
+.wind-box,
+.visibility-box {
   flex: 1;
   background-color: rgb(39, 39, 42, 0.8);
   display: flex;
