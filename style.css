@@ -180,3 +180,154 @@ body {
   justify-content: center;
   opacity: 0.3;
 }
+
+/* ---------- RESPONSIVE MEDIA QUERIES (add to your existing CSS) ---------- */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .search-box {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  #cityInput {
+    width: 100%;
+  }
+
+  #searchBtn {
+    width: 40%;
+  }
+
+  .card {
+    padding: 24px 20px;
+    margin-top: 36px;
+  }
+
+  .location {
+    font-size: 28px;
+  }
+
+  .temp span {
+    font-size: 52px;
+  }
+
+  .temp {
+    font-size: 32px;
+  }
+
+  .weatherIcon {
+    font-size: 64px;
+  }
+
+  .stats {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .humidity-box,
+  .wind-box,
+  .visibility-box {
+    flex: 1 1 calc(33.33% - 8px);
+    min-width: 100px;
+    padding: 12px 8px;
+  }
+
+  .footer {
+    position: relative;
+    margin-top: 60px;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .location {
+    font-size: 24px;
+  }
+
+  .temp span {
+    font-size: 44px;
+  }
+
+  .condition {
+    font-size: 15px;
+  }
+
+  .humidity-box,
+  .wind-box,
+  .visibility-box {
+    flex: 1 1 100%;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .time {
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+
+  .weatherIcon {
+    font-size: 56px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .container {
+    max-width: 95%;
+  }
+
+  #cityInput {
+    width: 60%;
+  }
+
+  #searchBtn {
+    width: 25%;
+  }
+
+  .location {
+    font-size: 32px;
+  }
+
+  .temp span {
+    font-size: 60px;
+  }
+
+  .stats {
+    gap: 12px;
+  }
+
+  .humidity-box,
+  .wind-box,
+  .visibility-box {
+    padding: 14px 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 85%;
+  }
+
+  .location {
+    font-size: 36px;
+  }
+}
