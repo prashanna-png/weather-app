@@ -9,6 +9,10 @@ const visibility = document.getElementById('visibility');
 const condition = document.getElementById('condition');
 const clock = document.getElementById('clock');
 
+window.onload = function () {
+  getWeather("Kathmandu");
+};
+
 const weekDay = [
   "Sunday", "Monday", "Tuesday", "Wednesday",
   "Thursday", "Friday", "Saturday"
@@ -61,7 +65,7 @@ function getWeather(city) {
 
   const apiKey = config.apiKey;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+  cityName.innerText = "Loading...";
   fetch(url)
     .then(function (response) {
       return response.json();
