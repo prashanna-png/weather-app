@@ -81,8 +81,7 @@ function getWeatherIcon(weatherMain) {
 function getWeather(city) {
   if (!city) return;
 
-  const apiKey = config.apiKey;
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const url = `/api/weather?city=${city}`;
 
   cityName.innerText = "Loading...";
 
