@@ -8,7 +8,7 @@ A clean, minimal weather app that shows real-time weather data for any city in t
 
 ## 🔗 Live Demo
 
-👉 https://weather-app-sand-ten-74.vercel.app
+👉 [https://weather-app-sand-ten-74.vercel.app](https://weather-app-sand-ten-74.vercel.app)
 
 ---
 
@@ -17,7 +17,6 @@ A clean, minimal weather app that shows real-time weather data for any city in t
 <img width="1862" height="1050" alt="image" src="https://github.com/user-attachments/assets/dfbbf8fd-4589-4ef6-b3bd-6281f5467224" />
 <img width="1862" height="1050" alt="image" src="https://github.com/user-attachments/assets/ccfb913a-a5b9-4ca1-abfa-8c521a66ae93" />
 <img width="1862" height="1050" alt="image" src="https://github.com/user-attachments/assets/9b0c39c3-cbf4-410e-b3f9-2657f322ee67" />
-
 
 ---
 
@@ -31,6 +30,7 @@ A clean, minimal weather app that shows real-time weather data for any city in t
 - 🕐 Live date and time display
 - 📱 Fully responsive — works on mobile, tablet, and desktop
 - ⚡ Loads Kathmandu weather by default on startup
+- 🔒 API key secured via Vercel serverless functions
 
 ---
 
@@ -40,6 +40,7 @@ A clean, minimal weather app that shows real-time weather data for any city in t
 - **CSS3** — styling, glassmorphism effects, responsive media queries
 - **Vanilla JavaScript** — logic, API calls, DOM manipulation
 - **OpenWeatherMap API** — real-time weather data
+- **Vercel Serverless Functions** — secure API key handling
 
 ---
 
@@ -47,8 +48,8 @@ A clean, minimal weather app that shows real-time weather data for any city in t
 
 ### 1. Clone the repository
 ```bash
-git clone git clone https://github.com/prashanna-png/weather-app.git
-cd the-weather
+git clone https://github.com/prashanna-png/weather-app.git
+cd weather-app
 ```
 
 ### 2. Get an API key
@@ -56,15 +57,15 @@ cd the-weather
 - Create a free account
 - Copy your API key
 
-### 3. Set up your API key
-Rename `config.example.js` to `config.js` and add your key:
-```js
-const config = {
-  apiKey: 'your_api_key_here'
-};
-```
+### 3. Set up environment variable
 
-> ⚠️ **Never commit your real `config.js` to GitHub.** Make sure it's in `.gitignore`.
+**For Vercel deployment:**
+1. Go to your project on [vercel.com](https://vercel.com)
+2. Navigate to **Settings → Environment Variables**
+3. Add `OPENWEATHER_API_KEY` as the key and paste your API key as the value
+4. Redeploy
+
+> ⚠️ **Never commit your API key to GitHub.** This project uses a serverless function to keep the key secure on the server side.
 
 ### 4. Open in browser
 Just open `index.html` in your browser — no build tools needed.
@@ -74,24 +75,38 @@ Just open `index.html` in your browser — no build tools needed.
 ## 📁 Project Structure
 
 ```
-the-weather/
-├── index.html          # Main HTML structure
-├── style.css           # All styles + responsive design
-├── script.js           # Weather logic + API calls
-├── config.js           # API key (gitignored)
-├── config.example.js   # Template for API key setup
-└── logo/               # Icons (humidity, wind, visibility, favicon)
+weather-app/
+├── api/
+│   └── weather.js          # Vercel serverless function (hides API key)
+├── logo/                   # Icons (humidity, wind, visibility, favicon)
+├── index.html              # Main HTML structure
+├── style.css               # All styles + responsive design
+├── script.js               # Weather logic + fetch calls
+├── config.example.js       # Template showing expected config format
+└── README.md
 ```
 
 ---
 
 ## 🔌 API Reference
 
-This app uses the [OpenWeatherMap Current Weather API](https://openweathermap.org/current):
+Weather data is fetched through a serverless function to keep the API key hidden:
+
+```
+GET /api/weather?city={city}
+```
+
+Which internally calls the OpenWeatherMap API:
 
 ```
 GET https://api.openweathermap.org/data/2.5/weather?q={city}&appid={key}&units=metric
 ```
+
+---
+
+## 🔒 Security
+
+This project uses a **Vercel serverless function** (`/api/weather.js`) to proxy API requests. The OpenWeatherMap API key is stored as an environment variable on Vercel and is never exposed to the frontend or committed to the repository.
 
 ---
 
@@ -108,7 +123,7 @@ GET https://api.openweathermap.org/data/2.5/weather?q={city}&appid={key}&units=m
 ## 🙋‍♂️ Author
 
 **Prashanna**
-- GitHub: prashanna-png
+- GitHub: [prashanna-png](https://github.com/prashanna-png)
 - Contact: prashandon97@gmail.com
 - Deployed with ❤️ on [Vercel](https://vercel.com)
 
