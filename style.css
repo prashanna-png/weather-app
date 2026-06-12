@@ -61,8 +61,8 @@ body {
   width: 15%;
   height: 56px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #e2e8f0;
+  background: rgba(255, 255, 255);
+  color: #000000;
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
   font-size: 15px;
@@ -181,7 +181,6 @@ body {
   opacity: 0.3;
 }
 
-/* ---------- RESPONSIVE MEDIA QUERIES (add to your existing CSS) ---------- */
 
 @media (max-width: 600px) {
   .container {
