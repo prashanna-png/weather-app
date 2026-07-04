@@ -15,8 +15,6 @@ A clean, minimal weather app that shows real-time weather data for any city in t
 ## 📸 Preview
 
 <img width="1862" height="1050" alt="image" src="https://github.com/user-attachments/assets/dfbbf8fd-4589-4ef6-b3bd-6281f5467224" />
-<img width="1862" height="1050" alt="image" src="https://github.com/user-attachments/assets/ccfb913a-a5b9-4ca1-abfa-8c521a66ae93" />
-<img width="1862" height="1050" alt="image" src="https://github.com/user-attachments/assets/9b0c39c3-cbf4-410e-b3f9-2657f322ee67" />
 
 ---
 
